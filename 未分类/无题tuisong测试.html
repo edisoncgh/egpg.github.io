@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>无题tuisong测试 - 我的博客
+    </title>
+
+    <!-- Bootstrap CSS (使用国内CDN镜像，避免被广告拦截器屏蔽) -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.6.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- mdeditor -->
+    <link href="/static/mdeditor/css/editormd.min.css" rel="stylesheet">
+    <link href="/static/mdeditor/css/editormd.preview.css" rel="stylesheet">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdn.staticfile.org/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+
+    <!-- 共用样式 -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding-top: 56px;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar h5 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .sidebar .list-group-item {
+            border: none;
+            padding: 8px 0;
+            background-color: transparent;
+        }
+
+        .sidebar .list-group-item a {
+            color: #495057;
+            text-decoration: none;
+        }
+
+        .sidebar .list-group-item a:hover {
+            color: #007bff;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #f8f9fa;
+            text-decoration: underline;
+        }
+    </style>
+
+    
+<style>
+    .article-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+
+    .article-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #212529;
+    }
+
+    .article-meta {
+        font-size: 0.9rem;
+        color: #6c757d;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .article-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+
+    .article-content h1,
+    .article-content h2,
+    .article-content h3 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .article-content p {
+        margin-bottom: 20px;
+    }
+
+    .article-content pre {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #6c757d;
+        padding-left: 20px;
+        margin-left: 0;
+        color: #6c757d;
+    }
+
+    .article-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e9ecef;
+    }
+
+    .article-navigation a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .article-navigation a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <!-- 顶部导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand"
+            href="../index.html">我的博客</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="../index.html">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="../archive.html">归档</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="../categories.html">分类</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="../friends.html">友链</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="../about.html">关于</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    
+
+    <!-- 主体内容 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                
+<div class="article-container">
+    <h1 class="article-title">无题tuisong测试</h1>
+    <div class="article-meta">
+        <span><i class="far fa-calendar-alt me-1"></i> 2025-03-15</span>
+        <span class="ms-3"><i class="far fa-folder me-1"></i> 未分类</span>
+    </div>
+    <div class="article-content">
+        <p>fjklasdjgl</p>
+    </div>
+    <div class="article-navigation">
+        
+        <a href="../未分类/无题推送测试.html" class="prev-article">
+            <i class="fas fa-arrow-left me-1"></i> 无题推送测试
+        </a>
+        
+
+        
+        <a href="../博文/无题真的测试.html" class="next-article">
+            无题真的测试 <i class="fas fa-arrow-right ms-1"></i>
+        </a>
+        
+    </div>
+</div>
+
+            </div>
+
+            <!-- 侧边栏 -->
+            <div class="col-lg-4">
+                
+                <!-- 分类列表 -->
+<div class="sidebar">
+    <h5>分类</h5>
+    <div class="list-group">
+        
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+            <a
+                href="../categories.html">未分类</a>
+            <span class="badge bg-primary rounded-pill">4</span>
+        </div>
+        
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+            <a
+                href="../categories.html">博文</a>
+            <span class="badge bg-primary rounded-pill">4</span>
+        </div>
+        
+    </div>
+</div>
+
+<!-- 最近文章 -->
+<div class="sidebar">
+    <h5>最近文章</h5>
+    <div class="list-group">
+        
+        <div class="list-group-item">
+            <a
+                href="../博文/无题0413.html">无题0413</a>
+        </div>
+        
+        <div class="list-group-item">
+            <a
+                href="../博文/无题真的测试.html">无题真的测试</a>
+        </div>
+        
+        <div class="list-group-item">
+            <a
+                href="../未分类/无题tuisong测试.html">无题tuisong测试</a>
+        </div>
+        
+        <div class="list-group-item">
+            <a
+                href="../未分类/无题推送测试.html">无题推送测试</a>
+        </div>
+        
+        <div class="list-group-item">
+            <a
+                href="../未分类/推送测试1号.html">推送测试1号</a>
+        </div>
+        
+    </div>
+</div>
+
+<!-- 友情链接 -->
+<div class="sidebar">
+    <h5>友情链接</h5>
+    <div class="list-group">
+        
+        <div class="list-group-item">
+            <a href="http://www.baidu.com" target="_blank">baidu</a>
+        </div>
+        
+    </div>
+</div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <!-- 页脚 -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; 2026 我的博客</p>
+                <div class="social-links mt-3">
+                    <a href="#" class="mx-2"><i class="fab fa-github"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+</body>
+
+</html>
